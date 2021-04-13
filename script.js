@@ -6,11 +6,13 @@ const ticker = krakenEndpoint + 'Ticker?pair=XBTEUR';
 let myApp;
 let lastPrice;
 let currentPrice;
+const diffPrice = 50;
 
 // Array of Prices - Check Price every minute and compare
 
 async function startProcess() {
-    outputConsoleMessage('Starting Process')
+    outputConsoleMessage('Starting Process');
+    outputConsoleMessage('Difference price: ' + diffPrice);
     await fetchPrice();
     lastPrice = currentPrice;
     myApp = setInterval(getPrice, 1000);
@@ -22,7 +24,7 @@ async function getPrice() {
 
     let diff = currentPrice - lastPrice;
     // outputConsoleMessage('(Internal) Difference: €' + diff.toFixed(2));
-    if (Math.abs(diff) >= 10) {
+    if (Math.abs(diff) >= diffPrice) {
         outputConsoleMessage((1 / currentPrice).toFixed(10));
         let percentageDiff = ((currentPrice / lastPrice) * 100) - 100;
         let message = `Price difference: €${diff.toFixed(2)}`;
