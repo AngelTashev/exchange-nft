@@ -1,17 +1,57 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-        <script src="./script.js" defer></script>
-    </head>
-    <body>
-        <div id="outputConsole" class="output-console">
-        **** BTC Rate for NFT *****
-        <br/>
-        </div>
-        <button type="button" class="kraken-cta btn-purple" id="sendWebSocketMessageBtn"
-        onclick="startProcess()">
-            Start Process
-        </button>
-        <!-- Site updated -->>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <button type="button" class="kraken-cta btn-purple" id="sendWebSocketMessageBtn" onclick="startProcess()">
+        Start Process
+    </button>
+    <!-- Site updated -->
+    <header class="sticky">
+        <article class="header-containers">
+            <article class="header-title-container">
+                <article class="header-img-wrapper">
+                    <img class="header-img" src="./images/wallex_logo.svg" alt="">
+                </article>
+                <h1 class="header-title">Wallex - NFT Change Rate</h1>
+            </article>
+            <article class="header-navigation-container">
+                <nav>
+                    <ul class="navigation-list">
+                        <li>
+                            <h3 class="last-refresh">Time since last refresh:</h3>
+                        </li>
+                        <li>
+                            <h3 id="last-refresh-text"></h3>
+                        </li>
+                    </ul>
+                </nav>
+            </article>
+        </article>
+
+    </header>
+
+    <main>
+        <section class="price-articles">
+        </section>
+        </section>
+    </main>
+
+    <script id="container-template" type="text/template">
+            <article class="price-article-container">
+                <h1 class="price-article-title">{{name}}</h1>
+            
+                <article class="price-block eur">
+                    <p>1 EUR = </p>
+                    <h3 class="price">{{btcPrice}} <span>BTC</span></h3>
+                </article>
+            
+            </article>
+        </script>
+</body>
+
 </html>

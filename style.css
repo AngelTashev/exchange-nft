@@ -1,36 +1,220 @@
-.output-console
-{
-  width:1000px;
-  height:800px;
-  line-height:3em;
-  overflow:auto;
-  background: #000;
-  border: 3px groove #ccc;
-  color: #ccc;
-  display: block;
-  padding: 5px;
-  overflow-wrap: break-word;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background: url('./images/wallex_logo.svg');
+    background: #333333;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.btn-purple 
-{
-  background-color: #5741d9;
-  color: #fff !important;
-  font-size: 24px;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
-.kraken-cta 
-{
-  display: block;
-  padding: 12px 15px 11px 15px;
-  border-radius: 30px;
-  text-align: center;
-  text-decoration: none;
-  font-family: "Celias";
-  font-size: 18px;
-  line-height: 11px;
-  font-weight: bold;
-  position: relative;
-  transition: opacity 0.2s linear 0s;
-  border: 2px solid transparent;
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+header {
+    padding: 0;
+    width: 100%;
+    background  : #666666;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 1px 11px -1px rgba(0,0,0,0.7);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+h1, h3, button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navigation-list {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.header-img-wrapper {
+    width: 50px;
+    margin: 17px 15px 17px 0px;
+    box-shadow: 0px 0px 10px -5px rgba(0,0,0,1);
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 0;
+}
+
+.header-img {
+    margin: 0;
+    object-fit: contain;
+    display: block;
+}
+
+.header-containers {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+}
+
+.header-title-container {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.header-title {
+    color: white;
+    font-weight: 300;
+}
+
+.last-refresh,
+#last-refresh-text {
+    color: #fff;
+    font-weight: 300;
+}
+
+.last-refresh {
+    margin-right: 12px  ;
+}
+
+#last-refresh-text {
+    margin-right: 40px;
+    width: 30px;
+    align-items: center;
+}
+
+main {
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+.price-articles {
+    padding: 0;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    
+}
+
+.price-articles-section {
+    flex-basis: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-article-title {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.price-article-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.price-block {
+    border: 1px solid #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.6);
+}
+
+.price-block p {
+    font-size: 24px;
+}
+
+.price-block p span {
+    padding: 0px 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 24px;
+}
+
+.price span {
+  font-weight: 700;
+}
+
+.eur {
+    background: #12743b;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.calculator-container {
+    height: 100%;
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .header-navigation-container {
+        display: none;
+    }
+    
+    .header-containers {
+        background: red;
+        align-items: center;
+    }
+
+    .price-articles-section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .price-articles {
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .price-block {
+        width: 70vw;
+    }
+
 }
